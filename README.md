@@ -1,5 +1,5 @@
 ## user stories
-
+```
 As a user,
 to have an account,
 I need to be able to sign up with an email and password.
@@ -39,3 +39,10 @@ I should get an error message.
 As a user,
 if a space is available,
 I can receive multiple requests.
+```
+
+## Setup
+
+- Javascript
+- HTML, CSS
+- jQuery
