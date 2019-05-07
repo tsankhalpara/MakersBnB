@@ -2,7 +2,7 @@ describe("Spaces", function() {
   var spaces;
 
   beforeEach(function() {
-    spaces = new Spaces("name", "description");
+    spaces = new Spaces("name", "description", "price");
   });
 
   describe("name", function() {
@@ -17,5 +17,10 @@ describe("Spaces", function() {
     });
   });
 
+  describe("price", function() {
+    it("has a price", function() {
+      expect(spaces.price).toEqual("price");
+    });
+  });
 
 });
