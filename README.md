@@ -46,3 +46,12 @@ I can receive multiple requests.
 - Javascript
 - HTML, CSS
 - jQuery
+
+
+
+
+## DATABASE
+
+Follow database setup instructions in the `db` folder.
+
+To connect to the database succesfully, ensure that in `app.js` you change the variable `PGUSER` to the name of your machine.
