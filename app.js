@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 const app = express();
 var pg = require('pg');
 var format = require('pg-format');
-var PGUSER = 'Tara';
+var PGUSER = 'student';
 var PGDATABASE = 'makersbnb';
 
 var config = {
