@@ -3,20 +3,36 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test-e2e": "nightwatch",
-    "e2e": "nightwatch --config nightwatch.conf.js"
+    "start": "node index.js",
+    "test": "node index.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pg": "^7.10.0"
   },
   "devDependencies": {
     "chromedriver": "^74.0.0",
     "nightwatch": "^1.0.19",
     "selenium-server": "^3.141.59"
-  }
+  },
+  "description": "``` As a user, to have an account, I need to be able to sign up with an email and password.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsankhalpara/MakersBnB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsankhalpara/MakersBnB/issues"
+  },
+  "homepage": "https://github.com/tsankhalpara/MakersBnB#readme"
 }

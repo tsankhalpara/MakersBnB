@@ -1,7 +1,7 @@
 {
-    "src_folders" : ["spec/features"],
+    "src_folders" : ["test"],
     "output_folder" : "reports",
-  
+
     "selenium" : {
       "start_process" : true,
       "server_path" : "./bin/selenium-server-standalone-3.3.1.jar",
@@ -11,7 +11,7 @@
         "webdriver.chrome.driver" : "node_modules/.bin/chromedriver"
       }
     },
-  
+
     "test_settings" : {
       "default" : {
         "launch_url" : "http://localhost",
