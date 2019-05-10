@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 const app = express();
 var pg = require('pg');
 var format = require('pg-format');
-var PGUSER = 'student';
+var PGUSER = 'Tara';
 var PGDATABASE = 'makersbnb';
 
 var config = {
@@ -53,7 +53,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
