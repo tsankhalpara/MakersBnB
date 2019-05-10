@@ -2,4 +2,14 @@ body {
   text-align: center;
   padding-top: 40px;
   background-color: #F1E1E7;
+  font-family: 'Poiret One';
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+form {
+  font-size: 20px;
 }
