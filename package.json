@@ -13,7 +13,8 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pg": "^7.10.0",
-    "pg-format": "^1.0.4"
+    "pg-format": "^1.0.4",
+    "php": "0.0.1"
   },
   "devDependencies": {
     "cypress": "^3.2.0"

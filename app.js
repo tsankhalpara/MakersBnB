@@ -98,6 +98,13 @@ app.get('/confirmation', function (req, res) {
 });
 
 app.get('/spaces', function (req, res) {
+  const showSpaces = pool.query("SELECT * FROM spaces", (err, res) => {
+    if (err) {
+      console.log(err.stack)
+    } else {
+      console.log(res.rows[0])
+    }
+  });
   res.render('spaces');
 });
 
