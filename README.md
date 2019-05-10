@@ -48,8 +48,6 @@ I can receive multiple requests.
 - jQuery
 
 
-
-
 ## DATABASE
 
 Follow database setup instructions in the `db` folder.

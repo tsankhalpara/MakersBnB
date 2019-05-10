@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 const app = express();
 var pg = require('pg');
 var format = require('pg-format');
-var PGUSER = 'Tara';
+var PGUSER = 'student';
 var PGDATABASE = 'makersbnb';
 
 var config = {
@@ -68,6 +68,45 @@ app.get('/', function (req, res) {
 
 app.get('/signup', function (req, res) {
   res.render('signup');
+});
+
+app.post('/signup', function (req, res) {
+
+
+  var username = req.param('username');
+  var email = req.param('email');
+  var password = req.param('password');
+
+  const text = 'INSERT INTO users(username, email, password) VALUES($1, $2, $3) RETURNING *';
+  const values = [username, email, password];
+
+  pool.query(text, values, (err, res) => {
+    if (err) {
+      console.log(err.stack)
+    } else {
+      console.log(res.rows[0])
+    }
+  });
+
+
+  // pool.connect(function (err, client, done) {
+  //   if (err) console.log(err)
+  //   app.listen(3000, function () {
+  //     console.log('Connected successfully')
+  //   })
+  //   myClient = client
+  //   var nameQuery = format('SELECT * from users WHERE username = %L', username);
+  //   myClient.query(nameQuery, function (err, result) {
+  //     if (err) {
+  //       console.log(err)
+  //     }
+  //     console.log(result.rows[0])
+  //   })
+  // })
+
+
+
+  res.redirect('/spaces') // does the session variable need to be passed as an argument here?
 });
 
 app.get('/login', function (req, res) {
