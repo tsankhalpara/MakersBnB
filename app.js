@@ -72,7 +72,6 @@ app.get('/signup', function (req, res) {
 
 app.post('/signup', function (req, res) {
 
-
   var username = req.param('username');
   var email = req.param('email');
   var password = req.param('password');
@@ -87,26 +86,7 @@ app.post('/signup', function (req, res) {
       console.log(res.rows[0])
     }
   });
-
-
-  // pool.connect(function (err, client, done) {
-  //   if (err) console.log(err)
-  //   app.listen(3000, function () {
-  //     console.log('Connected successfully')
-  //   })
-  //   myClient = client
-  //   var nameQuery = format('SELECT * from users WHERE username = %L', username);
-  //   myClient.query(nameQuery, function (err, result) {
-  //     if (err) {
-  //       console.log(err)
-  //     }
-  //     console.log(result.rows[0])
-  //   })
-  // })
-
-
-
-  res.redirect('/spaces') // does the session variable need to be passed as an argument here?
+  res.redirect('/confirmation') // does the session variable need to be passed as an argument here?
 });
 
 app.get('/login', function (req, res) {
@@ -119,6 +99,25 @@ app.get('/confirmation', function (req, res) {
 
 app.get('/spaces', function (req, res) {
   res.render('spaces');
+});
+
+app.post('/spaces', function (req, res) {
+
+  var name = req.param('name');
+  var description = req.param('description');
+  var price = req.param('price');
+
+  const text = 'INSERT INTO spaces(name, description, price) VALUES($1, $2, $3) RETURNING *';
+  const values = [name, description, price];
+
+  pool.query(text, values, (err, res) => {
+    if (err) {
+      console.log(err.stack)
+    } else {
+      console.log(res.rows[0])
+    }
+  });
+  res.redirect('/spaces') // does the session variable need to be passed as an argument here?
 });
 
 
